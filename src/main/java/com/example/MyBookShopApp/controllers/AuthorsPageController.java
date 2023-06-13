@@ -2,6 +2,7 @@ package com.example.MyBookShopApp.controllers;
 
 import com.example.MyBookShopApp.data.Author;
 import com.example.MyBookShopApp.data.AuthorService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,13 +13,10 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/bookshop")
+@RequiredArgsConstructor
 public class AuthorsPageController {
 
     private final AuthorService authorService;
-
-    public AuthorsPageController(AuthorService authorService) {
-        this.authorService = authorService;
-    }
 
     @GetMapping("/authors")
     public String genresPage(){
